@@ -667,3 +667,154 @@ position:relative;
 z-index:2;
 box-shadow:0 25px 60px rgba(0,0,0,.35);
 }
+/* ===========================
+   PREMIUM PORTAL BUTTONS
+=========================== */
+
+.hero .btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+min-width:220px;
+padding:16px 28px;
+margin:10px;
+font-size:18px;
+font-weight:700;
+border-radius:18px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(18px);
+border:2px solid rgba(212,175,55,.6);
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+transition:all .35s ease;
+}
+
+.hero .btn:hover{
+transform:translateY(-8px) scale(1.05);
+background:#D4AF37;
+color:#041B38;
+box-shadow:0 25px 50px rgba(212,175,55,.45);
+}
+
+.hero .gold{
+background:linear-gradient(135deg,#D4AF37,#FFD700);
+color:#041B38;
+}
+/* ===========================
+   PREMIUM ANIMATED BACKGROUND
+=========================== */
+
+body{
+position:relative;
+background:
+radial-gradient(circle at top left,#1E3A8A 0%,#041B38 35%,#061A2F 100%);
+background-attachment:fixed;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:-250px;
+left:-250px;
+width:700px;
+height:700px;
+border-radius:50%;
+background:rgba(212,175,55,.10);
+filter:blur(120px);
+animation:moveGlow1 14s ease-in-out infinite alternate;
+pointer-events:none;
+z-index:-2;
+}
+
+body::after{
+content:"";
+position:fixed;
+bottom:-250px;
+right:-250px;
+width:650px;
+height:650px;
+border-radius:50%;
+background:rgba(59,130,246,.15);
+filter:blur(120px);
+animation:moveGlow2 16s ease-in-out infinite alternate;
+pointer-events:none;
+z-index:-2;
+}
+
+@keyframes moveGlow1{
+0%{
+transform:translate(0,0);
+}
+100%{
+transform:translate(180px,120px);
+}
+}
+
+@keyframes moveGlow2{
+0%{
+transform:translate(0,0);
+}
+100%{
+transform:translate(-180px,-120px);
+}
+}
+/* ===========================
+   PREMIUM LOGO ANIMATION
+=========================== */
+
+.hero-logo,
+.splash-logo,
+.logo{
+animation:logoFloat 4s ease-in-out infinite;
+transition:.4s;
+}
+
+.hero-logo:hover,
+.splash-logo:hover,
+.logo:hover{
+transform:scale(1.08) rotate(5deg);
+box-shadow:0 0 45px rgba(212,175,55,.8);
+}
+
+@keyframes logoFloat{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.hero h1{
+text-shadow:
+0 0 10px rgba(255,255,255,.3),
+0 0 25px rgba(212,175,55,.4);
+}
+
+.badge{
+box-shadow:0 0 25px rgba(212,175,55,.5);
+animation:pulse 2.5s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.05);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
