@@ -5,6 +5,13 @@
    /students, /attendance, /homework, /results
    ========================================================================== */
 
+// ---------- Login guard ----------
+// Blocks direct access to this page unless the teacher logged in via
+// teacher-login.html in this same browser session.
+if (sessionStorage.getItem("teacherLoggedIn") !== "true") {
+  window.location.href = "teacher-login.html";
+}
+
 // ---------- State (kept in sync with Firebase in real time) ----------
 
 let students   = [];
@@ -369,6 +376,7 @@ function saveResult() {
 
 function logoutTeacher() {
   if (confirm("Logout from Teacher Dashboard?")) {
+    sessionStorage.removeItem("teacherLoggedIn");
     window.location.href = "teacher-login.html";
   }
 }
